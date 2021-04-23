@@ -32,7 +32,7 @@ Route::get('/logout', [AuthentificationController::class, 'logout'])->name('logo
 
 //--- CONNECTED USERS ----
 Route::get('/home', [HomeController::class, 'index'])->name('dashboard');
-Route::get('/employee', [HomeController::class, 'employee'])->name('employee');
-Route::post('/employeepost', [HomeController::class, 'employeePost'])->name('employeePost');
+Route::get('/meeting', [HomeController::class, 'meeting'])->name('meeting');
+Route::post('/meetingpost', [HomeController::class, 'meetingPost'])->name('meetingPost');
 Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
 //Route::get('/messages', [HomeController::class, 'messages'])->name('messages');

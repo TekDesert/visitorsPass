@@ -6,7 +6,7 @@
     <div class="container-login100">
         <div class="wrap-login100">
 
-            <form class="login100-form validate-form" method="POST" action="{{ route('employeePost') }}" enctype="multipart/form-data">
+            <form class="login100-form validate-form" method="POST" action="{{ route('meetingPost') }}" enctype="multipart/form-data">
                 @csrf
 
                 <span class="login100-form-title p-b-26">

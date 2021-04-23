@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Employee;
+use App\Models\Meeting;
 
 class HomeController extends Controller
 {
@@ -15,10 +15,10 @@ class HomeController extends Controller
     public function index(){
         return view('dashboard');
     }
-    public function employee(){
-        return view('employee');
+    public function meeting(){
+        return view('meeting');
     }
-    public function employeePost(Request $request){
+    public function meetingPost(Request $request){
         $this->validate($request, [
             'nature' => 'required',
             'date' => 'required',
@@ -32,7 +32,7 @@ class HomeController extends Controller
 
         ]);
 
-          $employee = Employee::create([
+          $Meeting = Meeting::create([
             'natureofvisit' => $request->nature,
             'date' => $request->date,
             'starttime' => $request->start,
@@ -46,7 +46,7 @@ class HomeController extends Controller
           ]);
 
 
-           if($employee){
+           if($Meeting){
 
                if( $request->file('picture')){ //If there was an image uploaded
 
@@ -64,16 +64,16 @@ class HomeController extends Controller
                    $request->file('picture')->storeAs('profiles', $finalFileName , 'userPictures'); //The stored path is in 'config/filesystems.php' and is named 'mylocal';
 
 
-                   $employee->imageprofile = $finalFileName;
+                   $Meeting->imageprofile = $finalFileName;
 
                }
                else{
-                   $employee->imageprofile = 'default.jpg';
+                   $Meeting->imageprofile = 'default.jpg';
                }
 
-               $employee->save();
+               $Meeting->save();
 
-               return redirect()->route('employee');
+               return redirect()->route('Meeting');
 
           }
           else {
@@ -82,7 +82,7 @@ class HomeController extends Controller
     }
 
     public function admin(){
-        $meetings = Employee::paginate(1);
+        $meetings = Meeting::paginate(1);
         foreach($meetings as $items){
             return view('admin', ['meetings'=>$meetings]);
         }

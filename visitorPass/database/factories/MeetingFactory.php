@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Employee;
+use App\Models\Meeting;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class EmployeeFactory extends Factory
+class MeetingFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Employee::class;
+    protected $model = Meeting::class;
 
     /**
      * Define the model's default state.

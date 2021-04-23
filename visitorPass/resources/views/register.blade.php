@@ -21,7 +21,7 @@
 
                 </span>
 
-                <div class="wrap-input100 validate-input" >
+                <div class="wrap-input100 validate-input" data-validate="Enter Firstname">
                     <input class="input100" type="text" name="Fname">
                     <span class="focus-input100" data-placeholder="First Name"></span>
                 </div>
@@ -30,7 +30,7 @@
                 @enderror
 
 
-                <div class="wrap-input100 validate-input" >
+                <div class="wrap-input100 validate-input" data-validate="Enter Lastname">
                     <input class="input100" type="text" name="Lname">
                     <span class="focus-input100" data-placeholder="Last Name"></span>
                 </div>
@@ -38,7 +38,7 @@
                     <div class="uk-text-danger">{{ $message }}</div>
                 @enderror
 
-                <div class="wrap-input100 validate-input" >
+                <div class="wrap-input100 validate-input" data-validate="Enter email">
                     <input class="input100" type="text" name="email" > <!--data-validate = "Email is invalid" -->
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
