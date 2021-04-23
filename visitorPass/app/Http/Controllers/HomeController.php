@@ -73,7 +73,7 @@ class HomeController extends Controller
 
                $Meeting->save();
 
-               return redirect()->route('Meeting');
+               return redirect()->route('meeting')->with('status', 'Meeting created successfully');
 
           }
           else {

@@ -130,7 +130,9 @@
                 readURL(this);
             });
 </script>
-
+@if(session('status'))
+<script>UIkit.notification({message: '{{session('status')}}', status: 'success'})</script>
+@endif
 @endsection
 
 

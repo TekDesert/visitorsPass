@@ -23,7 +23,7 @@ class CreateMeetingsTable extends Migration
             $table->string("companyname");
             $table->string("personname");
             $table->string("mobilenumber");
-            $table->string("otherpeoples");
+            $table->string("otherpeople");
             $table->string("imageprofile");
         });
     }
